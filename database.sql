@@ -46,3 +46,14 @@ CREATE TABLE Reserves (
     FOREIGN KEY (bookingID) REFERENCES Booking(bookingID),
     FOREIGN KEY (tableID) REFERENCES RestaurantTable(tableID)
 );
+
+INSERT INTO Restaurant (name, street, postalCode, city, phone, email, openingTime, closingTime)
+VALUES ('Ribe Spisehus', 'Sønderportsgade 8', '6760', 'Ribe', '75421128', 'kontakt@ribespisehus.dk', '11:00:00', '22:00:00');
+
+INSERT INTO Customer (firstName, lastName, phone, email)
+VALUES
+('Mads', 'Jensen', '22114567', 'mads.jensen@email.dk'),
+('Freja', 'Nielsen', '30457821', 'freja.nielsen@email.dk'),
+('Mikkel', 'Andersen', '51892345', 'mikkel.andersen@email.dk'),
+('Ida', 'Christensen', '26783412', 'ida.christensen@email.dk'),
+('Emil', 'Larsen', '42315678', 'emil.larsen@email.dk');
