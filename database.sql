@@ -84,3 +84,13 @@ VALUES
 (4, 2),
 (5, 4),
 (6, 3);
+
+/* query 1- List all tables in the restaurant (for a front-end overview). */
+
+
+
+/* query 2- List all bookings for a given customer, ordered by date. */
+
+
+
+/* query 3- List all bookings for a given tableID, including the customers, for a specific date. */
