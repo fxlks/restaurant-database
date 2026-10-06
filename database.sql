@@ -1,0 +1,4 @@
+DROP  DATABASE IF EXISTS RestaurantDB;
+CREATE DATABASE RestaurantDB;
+USE RestaurantDB;
+
