@@ -86,11 +86,26 @@ VALUES
 (6, 3);
 
 /* query 1- List all tables in the restaurant (for a front-end overview). */
-
+SELECT tableID, tableNumber, capacity
+FROM RestaurantTable
+WHERE restaurantID = 1; 
+/* Result: Returns the 5 tables belonging to restaurantID 1, including their table number and capacity. */
 
 
 /* query 2- List all bookings for a given customer, ordered by date. */
-
+SELECT bookingID, bookingDate, bookingTime, numberOfGuests
+FROM Booking
+WHERE customerID = 1
+ORDER BY bookingDate ASC;
+/* Result: Returns the 2 bookings made by customerID 1 (Mads Jensen), ordered by booking date - earliest to latest. */
 
 
 /* query 3- List all bookings for a given tableID, including the customers, for a specific date. */
+SELECT Booking.bookingID, Booking.bookingDate, Booking.bookingTime, Booking.numberOfGuests,
+Customer.firstName, Customer.lastName
+FROM Booking
+JOIN Customer ON Booking.customerID = Customer.customerID
+JOIN Reserves ON Booking.bookingID = Reserves.bookingID
+WHERE Reserves.tableID = 2
+AND Booking.bookingDate = '2026-10-14';
+/* Result: Returns Mikkel Andersens booking for tableID 2 on 2026-10-14. */
